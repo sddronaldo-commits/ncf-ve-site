@@ -1,0 +1,237 @@
+/*
+ * Stylesheet for the replicated NCF‑VE website.
+ *
+ * This file defines a small set of CSS variables for easy colour changes and
+ * reusable components such as the header, buttons and tables. The palette
+ * has been chosen to approximate the original Canva site’s warm, earthy
+ * aesthetic while maintaining good contrast and legibility. Sections are
+ * annotated to improve maintainability.
+ */
+
+/* CSS custom properties for colours used throughout the site */
+:root {
+  /* Pale cream used for headings and accent panels */
+  --primary-bg: #fff9f1;
+  /* Warm brown used for the large call‑to‑action buttons */
+  --button-bg: #b07355;
+  /* Colour of text on the call‑to‑action buttons */
+  --button-text: #ffffff;
+  /* Light beige used for buttons in tables */
+  --link-bg: #fff2e6;
+  /* Brownish orange used for text on buttons in tables */
+  --link-text: #d6814c;
+  /* Border colour for resource table */
+  --table-border: #222222;
+}
+
+/* Reset some default margins */
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background-color: #ffffff;
+  color: #333333;
+  line-height: 1.5;
+}
+
+/* Header containing logo/text and main title on the landing page */
+header {
+  max-width: 1200px;
+  margin: 40px auto 10px auto;
+  padding: 20px;
+  background-color: var(--primary-bg);
+  border-radius: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Logo section on the landing page */
+.logo {
+  flex: 0 0 auto;
+  max-width: 40%;
+  color: #8b4513;
+}
+.logo .title {
+  font-size: 36px;
+  font-weight: bold;
+}
+.logo small {
+  display: block;
+  margin-top: 4px;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+/* Title area on the landing page */
+.page-title {
+  flex: 1;
+  text-align: right;
+}
+.page-title h1 {
+  margin: 0;
+  font-size: 32px;
+  font-weight: bold;
+  color: #333333;
+}
+.page-title p {
+  margin: 4px 0 0 0;
+  font-size: 20px;
+  color: #444444;
+}
+
+/* Decorative bar separating the header from the call‑to‑action buttons */
+.decor-bar {
+  width: 100%;
+  height: 32px;
+  /* Create a simple repeating diagonal pattern similar to the original */
+  background-image: repeating-linear-gradient(45deg,
+    #b07355 0 10px,
+    #fff9f1 10px 20px);
+  margin-top: 10px;
+}
+
+/* Container for the vertical list of large buttons on the landing page */
+.buttons {
+  max-width: 1200px;
+  margin: 40px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 20px;
+}
+
+/* Style for the call‑to‑action buttons */
+.buttons a {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  padding: 18px 32px;
+  font-size: 28px;
+  border-radius: 50px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+.buttons a span.icon {
+  font-size: 32px;
+  display: inline-block;
+  line-height: 1;
+}
+.buttons a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Generic page header used on sub‑pages */
+.page-header {
+  max-width: 1200px;
+  margin: 40px auto 20px auto;
+  padding: 20px;
+  background-color: var(--primary-bg);
+  border-radius: 20px;
+  text-align: center;
+  font-size: 32px;
+  font-weight: bold;
+  color: #555555;
+}
+
+/* Container wrapping tables */
+.table-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow-x: auto;
+}
+
+/* Base table styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+table th {
+  background-color: var(--primary-bg);
+  font-weight: bold;
+  padding: 16px;
+  text-align: left;
+}
+table td {
+  padding: 16px;
+}
+
+/* Resource table with heavy borders */
+.resource-table td,
+.resource-table th {
+  border: 2px solid var(--table-border);
+}
+
+/* Simpler table with lighter borders for teacher and field officer pages */
+.simple-table td,
+.simple-table th {
+  border: 1px solid #cccccc;
+}
+
+/* Stylised button used in tables */
+.link-btn {
+  display: inline-block;
+  background-color: var(--link-bg);
+  color: var(--link-text);
+  padding: 10px 20px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  white-space: nowrap;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.05);
+  transition: background-color 0.1s ease;
+}
+.link-btn:hover {
+  background-color: #ffe5d6;
+}
+
+/* Text at the bottom of pages */
+.update-msg {
+  text-align: center;
+  font-size: 22px;
+  margin: 40px 0;
+  color: #333333;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+  .logo {
+    max-width: 100%;
+    margin-bottom: 10px;
+  }
+  .page-title {
+    text-align: center;
+  }
+  .buttons {
+    align-items: center;
+  }
+  .buttons a {
+    font-size: 22px;
+    padding: 14px 24px;
+  }
+  .buttons a span.icon {
+    font-size: 28px;
+  }
+  .page-header {
+    font-size: 28px;
+  }
+  table th,
+  table td {
+    padding: 12px;
+  }
+  .link-btn {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+}
