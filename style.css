@@ -33,7 +33,7 @@ body {
   line-height: 1.5;
 }
 
-/* --- ADDED: Main Navigation Bar --- */
+/* --- Main Navigation Bar --- */
 .main-nav {
   background-color: #f8f8f8;
   border-bottom: 1px solid #e7e7e7;
@@ -67,7 +67,6 @@ body {
   background-color: var(--primary-bg); /* Use the pale cream for hover */
   color: #333;
 }
-/* --- END: Main Navigation Bar --- */
 
 
 /* Header containing logo/text and main title on the landing page */
@@ -241,6 +240,16 @@ table td {
 
 /* Responsive adjustments for smaller screens */
 @media (max-width: 768px) {
+  /* --- ADDED: Stack header on homepage --- */
+  header {
+    flex-direction: column;
+    text-align: center;
+    margin-top: 10px; /* Give nav bar space */
+  }
+  .page-title {
+    text-align: center;
+  }
+  
   .logo {
     text-align: center;
     width: 100%;
@@ -272,12 +281,69 @@ table td {
     font-size: 18px;
   }
   
-  /* --- ADDED: Responsive Nav --- */
+  /* --- Responsive Nav --- */
   .main-nav ul {
     gap: 10px; /* Smaller gap on small screens */
   }
   .main-nav a {
     font-size: 16px; /* Slightly smaller font */
     padding: 5px;
+  }
+  
+  /* --- ADDED: Responsive Table-to-Card --- */
+  .table-container {
+    overflow-x: hidden; /* Turn off horizontal scroll */
+  }
+  
+  table thead {
+    display: none; /* Hide desktop headers */
+  }
+  
+  table, table tbody, table tr, table td {
+    display: block; /* Stack all table elements */
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  table tr {
+    border: 1px solid #ccc;
+    margin-bottom: 15px;
+    background: #fff; /* Give cards a white background */
+  }
+  
+  table td {
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 50%; /* Make space for the label */
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: right; /* Align content to the right */
+    min-height: 24px; /* Ensure row isn't too small */
+  }
+  
+  table td:before {
+    /* Create the label from the data-label attribute */
+    content: attr(data-label);
+    position: absolute;
+    left: 10px;
+    width: 45%; /* Set width for the label */
+    padding-right: 10px;
+    font-weight: bold;
+    text-align: left; /* Align label to the left */
+    white-space: nowrap;
+  }
+  
+  /* Make the button full-width and centered */
+  table td:last-child {
+    text-align: center;
+    padding-left: 16px; /* Reset padding for button cell */
+  }
+  
+  .link-btn {
+    display: block;
+    width: 80%;
+    margin: 10px auto;
+    text-align: center;
   }
 }
