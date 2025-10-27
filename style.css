@@ -31,11 +31,9 @@ body {
   background-color: #ffffff;
   color: #333333;
   line-height: 1.5;
-  background-image: url('decor_pattern.png'); /* <-- ADDED PATTERN */
-  background-repeat: repeat;
 }
 
-/* --- Main Navigation Bar --- */
+/* --- ADDED: Main Navigation Bar --- */
 .main-nav {
   background-color: #f8f8f8;
   border-bottom: 1px solid #e7e7e7;
@@ -69,12 +67,7 @@ body {
   background-color: var(--primary-bg); /* Use the pale cream for hover */
   color: #333;
 }
-/* --- ADDED: Active Nav Link Style --- */
-.main-nav a.active {
-  background-color: var(--primary-bg);
-  color: #333;
-  box-shadow: inset 0 -2px 0 var(--button-bg); /* Underline effect */
-}
+/* --- END: Main Navigation Bar --- */
 
 
 /* Header containing logo/text and main title on the landing page */
@@ -194,7 +187,6 @@ table {
   border-collapse: collapse;
   margin-bottom: 30px;
   font-size: 16px;
-  background-color: #ffffff; /* Added white background to make text readable */
 }
 table th {
   background-color: var(--primary-bg);
@@ -247,21 +239,6 @@ table td {
   color: #333333;
 }
 
-/* --- ADDED: Main Footer Style --- */
-.main-footer {
-  text-align: center;
-  padding: 20px;
-  margin-top: 40px;
-  background-color: #f8f8f8;
-  border-top: 1px solid #e7e7e7;
-  color: #777;
-  font-size: 14px;
-}
-.main-footer p {
-  margin: 0;
-}
-
-
 /* Responsive adjustments for smaller screens */
 @media (max-width: 768px) {
   .logo {
@@ -295,7 +272,7 @@ table td {
     font-size: 18px;
   }
   
-  /* --- Responsive Nav --- */
+  /* --- ADDED: Responsive Nav --- */
   .main-nav ul {
     gap: 10px; /* Smaller gap on small screens */
   }
