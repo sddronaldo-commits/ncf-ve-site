@@ -27,7 +27,7 @@
 /* Reset some default margins */
 body {
   margin: 0;
-  font-family: sans-serif;
+  font-family: 'Nunito', sans-serif; /* <-- CHANGED */
   background-color: #ffffff;
   color: #333333;
   line-height: 1.5;
@@ -39,118 +39,117 @@ header {
   margin: 40px auto 10px auto;
   padding: 20px;
   background-color: var(--primary-bg);
-  border-radius: 20px;
+  border-radius: 8px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-}
-
-/* Logo section on the landing page */
-.logo {
-  flex: 0 0 auto;
-  max-width: 40%;
-  color: #8b4513;
-}
-.logo .title {
-  font-size: 36px;
-  font-weight: bold;
-}
-.logo small {
-  display: block;
-  margin-top: 4px;
-  font-size: 14px;
-  font-weight: normal;
-}
-
-/* Title area on the landing page */
-.page-title {
-  flex: 1;
-  text-align: right;
-}
-.page-title h1 {
-  margin: 0;
-  font-size: 32px;
-  font-weight: bold;
-  color: #333333;
-}
-.page-title p {
-  margin: 4px 0 0 0;
-  font-size: 20px;
-  color: #444444;
-}
-
-/* Decorative bar separating the header from the call‑to‑action buttons */
-.decor-bar {
-  width: 100%;
-  height: 32px;
-  /* Create a simple repeating diagonal pattern similar to the original */
-  background-image: repeating-linear-gradient(45deg,
-    #b07355 0 10px,
-    #fff9f1 10px 20px);
-  margin-top: 10px;
-}
-
-/* Container for the vertical list of large buttons on the landing page */
-.buttons {
-  max-width: 1200px;
-  margin: 40px auto;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
   gap: 20px;
 }
 
-/* Style for the call‑to‑action buttons */
+/* Logo and tagline in the header */
+.logo {
+  flex: 1 1 auto;
+  min-width: 200px;
+}
+.logo .title {
+  font-size: 28px;
+  font-weight: bold;
+}
+.logo small {
+  font-size: 18px;
+}
+
+/* Main title in the header */
+.page-title {
+  flex: 2 1 500px;
+  text-align: right;
+}
+.page-title h1 {
+  font-size: 32px;
+  margin: 0;
+}
+.page-title p {
+  font-size: 20px;
+  margin: 0;
+  font-weight: normal;
+}
+
+/* Decorative bar shown on the landing page */
+.decor-bar {
+  width: 100%;
+  height: 32px;
+  /* Use the beautiful gradient image you provided */ /* <-- CHANGED */
+  background-image: url('decor_bar.png');
+  background-size: cover;
+  background-position: center;
+  margin-top: 10px;
+}
+
+/* Container for the three large call‑to‑action buttons */
+.buttons {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center; /* <-- CHANGED */
+  gap: 20px;
+}
+
+/* Individual call‑to‑action buttons */
 .buttons a {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  text-decoration: none;
   background-color: var(--button-bg);
   color: var(--button-text);
-  padding: 18px 32px;
-  font-size: 28px;
-  border-radius: 50px;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.1s ease, box-shadow 0.1s ease;
-}
-.buttons a span.icon {
-  font-size: 32px;
-  display: inline-block;
-  line-height: 1;
+  text-decoration: none;
+  border-radius: 8px;
+  width: 300px;
+  height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 .buttons a:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
-
-/* Generic page header used on sub‑pages */
-.page-header {
-  max-width: 1200px;
-  margin: 40px auto 20px auto;
-  padding: 20px;
-  background-color: var(--primary-bg);
-  border-radius: 20px;
-  text-align: center;
-  font-size: 32px;
+.buttons a .icon {
+  font-size: 48px;
+}
+.buttons a span {
+  font-size: 24px;
   font-weight: bold;
-  color: #555555;
 }
 
-/* Container wrapping tables */
+/* Header style used on sub‑pages (teacher, field officer, resource) */
+.page-header {
+  background-color: var(--primary-bg);
+  padding: 40px 20px;
+  text-align: center;
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+/* Container for tables, providing horizontal scrolling on small screens */
 .table-container {
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 20px;
   overflow-x: auto;
 }
 
-/* Base table styles */
+/* General table styles */
 table {
   width: 100%;
   border-collapse: collapse;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+  font-size: 16px;
 }
 table th {
   background-color: var(--primary-bg);
@@ -160,6 +159,7 @@ table th {
 }
 table td {
   padding: 16px;
+  vertical-align: top; /* Ensure content aligns to the top */
 }
 
 /* Resource table with heavy borders */
@@ -186,10 +186,12 @@ table td {
   font-size: 16px;
   white-space: nowrap;
   box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.05);
-  transition: background-color 0.1s ease;
+  transition: background-color 0.1s ease, transform 0.1s ease, box-shadow 0.1s ease; /* <-- CHANGED */
 }
 .link-btn:hover {
   background-color: #ffe5d6;
+  transform: translateY(-2px); /* Lifts the button up slightly */ /* <-- ADDED */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Adds a subtle shadow */ /* <-- ADDED */
 }
 
 /* Text at the bottom of pages */
@@ -202,36 +204,34 @@ table td {
 
 /* Responsive adjustments for smaller screens */
 @media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    text-align: center;
-  }
   .logo {
-    max-width: 100%;
-    margin-bottom: 10px;
+    text-align: center;
+    width: 100%;
   }
   .page-title {
     text-align: center;
+    width: 100%;
   }
-  .buttons {
-    align-items: center;
-  }
-  .buttons a {
-    font-size: 22px;
-    padding: 14px 24px;
-  }
-  .buttons a span.icon {
+  .page-title h1 {
     font-size: 28px;
+  }
+  .page-title p {
+    font-size: 18px;
   }
   .page-header {
-    font-size: 28px;
+    font-size: 32px;
   }
-  table th,
-  table td {
-    padding: 12px;
+  .buttons a {
+    width: 100%;
+    height: 120px;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding-left: 30px;
   }
-  .link-btn {
-    font-size: 14px;
-    padding: 8px 16px;
+  .buttons a .icon {
+    font-size: 36px;
+  }
+  .update-msg {
+    font-size: 18px;
   }
 }
