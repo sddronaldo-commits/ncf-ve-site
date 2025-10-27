@@ -27,11 +27,48 @@
 /* Reset some default margins */
 body {
   margin: 0;
-  font-family: 'Nunito', sans-serif; /* <-- CHANGED */
+  font-family: 'Nunito', sans-serif;
   background-color: #ffffff;
   color: #333333;
   line-height: 1.5;
 }
+
+/* --- ADDED: Main Navigation Bar --- */
+.main-nav {
+  background-color: #f8f8f8;
+  border-bottom: 1px solid #e7e7e7;
+  width: 100%;
+  padding: 10px 0;
+}
+.main-nav ul {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap; /* Added for responsiveness */
+  justify-content: center;
+  gap: 20px; /* Adjusted gap */
+}
+.main-nav li {
+  display: inline-block;
+}
+.main-nav a {
+  text-decoration: none;
+  color: var(--button-bg); /* Use the warm brown from the theme */
+  font-weight: 700;
+  font-size: 18px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.main-nav a:hover,
+.main-nav a:focus {
+  background-color: var(--primary-bg); /* Use the pale cream for hover */
+  color: #333;
+}
+/* --- END: Main Navigation Bar --- */
+
 
 /* Header containing logo/text and main title on the landing page */
 header {
@@ -79,7 +116,7 @@ header {
 .decor-bar {
   width: 100%;
   height: 32px;
-  /* Use the beautiful gradient image you provided */ /* <-- CHANGED */
+  /* Use the beautiful gradient image you provided */
   background-image: url('decor_bar.png');
   background-size: cover;
   background-position: center;
@@ -94,7 +131,7 @@ header {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  align-items: center; /* <-- CHANGED */
+  align-items: center;
   gap: 20px;
 }
 
@@ -186,12 +223,12 @@ table td {
   font-size: 16px;
   white-space: nowrap;
   box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.05);
-  transition: background-color 0.1s ease, transform 0.1s ease, box-shadow 0.1s ease; /* <-- CHANGED */
+  transition: background-color 0.1s ease, transform 0.1s ease, box-shadow 0.1s ease;
 }
 .link-btn:hover {
   background-color: #ffe5d6;
-  transform: translateY(-2px); /* Lifts the button up slightly */ /* <-- ADDED */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Adds a subtle shadow */ /* <-- ADDED */
+  transform: translateY(-2px); /* Lifts the button up slightly */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Adds a subtle shadow */
 }
 
 /* Text at the bottom of pages */
@@ -233,5 +270,14 @@ table td {
   }
   .update-msg {
     font-size: 18px;
+  }
+  
+  /* --- ADDED: Responsive Nav --- */
+  .main-nav ul {
+    gap: 10px; /* Smaller gap on small screens */
+  }
+  .main-nav a {
+    font-size: 16px; /* Slightly smaller font */
+    padding: 5px;
   }
 }
